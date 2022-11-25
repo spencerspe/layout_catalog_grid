@@ -1,14 +1,18 @@
+@use "./utils/variables" as *;
+
 html {
   font-family: Roboto, sans-serif;
 }
 
 body {
-  margin: 0;
+  @extend %MandP-Reset;
+  font-family: "Roboto" Arial, Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-@import "_header.scss";
-@import "_catalog.scss";
+@import "./blocks/header";
+@import "./blocks/catalog";
+@import "./blocks/stars";

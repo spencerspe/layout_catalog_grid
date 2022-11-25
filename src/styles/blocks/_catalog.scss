@@ -1,0 +1,106 @@
+@use "../utils/variables" as *;
+@use "../utils/extends";
+
+
+.catalog {
+  margin: auto;
+  justify-content: center;
+  display: grid;
+  gap: 48px;
+
+  @media only screen and (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+   }
+
+  @media only screen and (max-width: 1024px) {
+   grid-template-columns:  repeat(3, 200px);
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns:  repeat(2, 200px);
+  }
+
+  @media only screen and (max-width: 488px) {
+    width: 248px;
+    grid-template-columns:  repeat(1, 200px);
+  }
+
+  &__card {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-rows: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px 16px;
+    width: 200px;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
+
+
+  &-img {
+    grid-column: 1 / span 2;
+    height: 134px;
+    margin: 0 0 calc($margin-B-unit * 10);
+    padding: 0 3px 0;
+  }
+
+  &-description {
+    grid-column: 1 / span 2;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 $margin-B-unit;
+  }
+
+  &-Pcode {
+    grid-column: 1 / span 2;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0 0 calc($margin-B-unit * 4);
+    padding: 0;
+  }
+
+  &-price {
+    grid-column: 1 ;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 calc($margin-B-unit * 6);
+  }
+
+  &-amount {
+   grid-column: 2;
+   text-align: end;
+   font-size: 16px;
+   font-weight: 700;
+   margin: 0 0 calc($margin-B-unit * 6);
+  }
+
+  &-button {
+    display: grid;
+    grid-column: 1 / span 6;
+    align-content: center;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    height: 40px;
+    background: $button-blue;
+    color: $button-white;
+
+    &:hover {
+      background-color: $button-white;
+      color: $button-blue;
+      border: 1px solid $button-blue;
+    }
+  }
+  }
+}
+
+
+
+
